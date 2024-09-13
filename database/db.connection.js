@@ -1,11 +1,16 @@
 const { Pool } = require('pg');
+const dotenv = require('dotenv');
+const path = require('path');
+
+// path to config.env file
+dotenv.config({ path: path.join(__dirname ,"../config.env")});
 
 const pool = new Pool({
-    host: "localhost",
-    user: "postgres",
-    database: "workwise",
-    password: "yash",
-    port: 5432,
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    database: process.env.DATABASE,
+    password: process.env.DATABASE_PASSWORD,
+    port: process.env.DATABASE_PORT,
 });
 
 pool.connect()
