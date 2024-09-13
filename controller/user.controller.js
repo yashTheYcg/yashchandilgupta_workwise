@@ -76,7 +76,7 @@ const loginUser = async (req,res)=> {
                         },
                     };
                     const authtoken = jwt.sign(data, process.env.JWT_SECRET, { expiresIn: '48hr' });
-                    res.status(201).json({ message: "Login Successfully", authtoken: authtoken });
+                    res.status(201).json({ message: "Login Successfully", authtoken: authtoken, type:user.type });
                 } else {
                     return res.status(400).json({ message: "Wrong credentials" });
                 }
