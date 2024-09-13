@@ -49,7 +49,7 @@ node index.js
 
 #### Output
 ```
-Server started at 3000
+Server started at 5000
 Postgres connected
 ```
 ## API Reference
@@ -65,7 +65,12 @@ Postgres connected
 
 ### Baseurl 
 ```http
-https://yashchandilgupta-workwise.onrender.com/
+https://yashchandilgupta-workwise.onrender.com
+```
+OR
+
+```http
+http://localhost:5000
 ```
 
 ### Signup 
