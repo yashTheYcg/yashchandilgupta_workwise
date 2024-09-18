@@ -7,10 +7,11 @@ const uuid4 = require('uuid4');
 const queries = require('../database/queries');
 const {validationResult} = require('express-validator');
 
+
 // path to config.env file
 dotenv.config({ path: path.join(__dirname ,"../config.env")});
 
-// for signing up the user
+// for signing up the user 
 const signupUser = async (req,res)=> {
     try {
 
@@ -75,8 +76,8 @@ const loginUser = async (req,res)=> {
                             type: user.type,
                         },
                     };
-                    const authtoken = jwt.sign(data, process.env.JWT_SECRET, { expiresIn: '48hr' });
-                    res.status(201).json({ message: "Login Successfully", authtoken: authtoken, type:user.type });
+                    const authtoken = jwt.sign(data, process.env.JWT_SECRET, { expiresIn: '48hr' }); 
+                    res.status(201).json({ message: "Login Successfully", authtoken: authtoken, type:user.type }); 
                 } else {
                     return res.status(400).json({ message: "Wrong credentials" });
                 }

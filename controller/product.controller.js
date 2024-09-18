@@ -16,7 +16,7 @@ const addProduct = async (req,res)=> {
         }
 
         const {id,type} = req.user;
-        pool.query(queries.userExist,[id],(error,result)=> {
+        pool.query(queries.userExistSeller,[id],(error,result)=> {
             if (error) throw error;
             
             if(result.rows.length>0){
@@ -55,7 +55,7 @@ const editProduct = async(req,res)=> {
         }
 
         const {id} = req.user;
-        pool.query(queries.userExist,[id],(error,result)=> {
+        pool.query(queries.userExistSeller,[id],(error,result)=> {
             if (error) throw error;
             
             if(result.rows.length>0){
@@ -103,7 +103,7 @@ const deleteProduct = async(req,res)=> {
         }
 
         const {id} = req.user;
-        pool.query(queries.userExist,[id],(error,result)=> {
+        pool.query(queries.userExistSeller,[id],(error,result)=> {
             if (error) throw error;
             
             if(result.rows.length>0){
